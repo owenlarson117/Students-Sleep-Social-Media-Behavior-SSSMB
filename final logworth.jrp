@@ -1,0 +1,1499 @@
+﻿Local Here(
+	(table1 = New Table( "Untitled 2",
+		Add Rows( 57 ),
+		New Script(
+			"Make Into Data Table",
+			Names Default To Here( 1 );
+			rpt = New Window(
+				"Students Social Media Addiction 4 8 - Fit Least Squares",
+				Data Table( "Students Social Media Addiction 4 8" ) <<
+				Fit Model(
+					Transform Column(
+						"Academic_Level{Undergraduate-Graduate}",
+						Formula(
+							Match( :Academic_Level,
+								"Undergraduate", 1,
+								"Graduate", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Academic_Level{High School-Undergraduate&Graduate}",
+						Formula(
+							Match( :Academic_Level,
+								"High School", 1,
+								"Undergraduate", -1,
+								"Graduate", -1,
+								.
+							)
+						)
+					),
+					Transform Column(
+						"Country{New Zealand&Sweden&France&Japan&Germany-Netherlands&Denmark&Switzerland}",
+						Formula(
+							Match( :Country,
+								"New Zealand", 1,
+								"Sweden", 1,
+								"France", 1,
+								"Japan", 1,
+								"Germany", 1,
+								"Netherlands", -1,
+								"Denmark", -1,
+								"Switzerland", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Poland-Malta&Taiwan&Bulgaria&Bolivia}",
+						Formula(
+							Match( :Country,
+								"Poland", 1,
+								"Malta", -1,
+								"Taiwan", -1,
+								"Bulgaria", -1,
+								"Bolivia", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Poland&Malta&Taiwan&Bulgaria&Bolivia-Finland&China&Australia&South Africa&Belarus&Iraq&San Marino}",
+						Formula(
+							Match( :Country,
+								"Poland", 1,
+								"Malta", 1,
+								"Taiwan", 1,
+								"Bulgaria", 1,
+								"Bolivia", 1,
+								"Finland", -1,
+								"China", -1,
+								"Australia", -1,
+								"South Africa", -1,
+								"Belarus", -1,
+								"Iraq", -1,
+								"San Marino", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Georgia&Chile&Bahrain-Sri Lanka}",
+						Formula(
+							Match( :Country,
+								"Georgia", 1,
+								"Chile", 1,
+								"Bahrain", 1,
+								"Sri Lanka", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea-Georgia&Chile&Bahrain&Sri Lanka&Spain}",
+						Formula(
+							Match( :Country,
+								"Kyrgyzstan", 1,
+								"Afghanistan", 1,
+								"Montenegro", 1,
+								"Bahamas", 1,
+								"Russia", 1,
+								"Turkey", 1,
+								"South Korea", 1,
+								"Georgia", -1,
+								"Chile", -1,
+								"Bahrain", -1,
+								"Sri Lanka", -1,
+								"Spain", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{China-Australia&South Africa&Belarus&Iraq&San Marino}",
+						Formula(
+							Match( :Country,
+								"China", 1,
+								"Australia", -1,
+								"South Africa", -1,
+								"Belarus", -1,
+								"Iraq", -1,
+								"San Marino", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Bangladesh-Greece&Pakistan}",
+						Formula(
+							Match( :Country,
+								"Bangladesh", 1,
+								"Greece", -1,
+								"Pakistan", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain-Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada}",
+						Formula(
+							Match( :Country,
+								"Lithuania", 1,
+								"Israel", 1,
+								"Bangladesh", 1,
+								"Greece", 1,
+								"Pakistan", 1,
+								"Italy", 1,
+								"Kyrgyzstan", 1,
+								"Afghanistan", 1,
+								"Montenegro", 1,
+								"Bahamas", 1,
+								"Russia", 1,
+								"Turkey", 1,
+								"South Korea", 1,
+								"Georgia", 1,
+								"Chile", 1,
+								"Bahrain", 1,
+								"Sri Lanka", 1,
+								"Spain", 1,
+								"Poland", -1,
+								"Malta", -1,
+								"Taiwan", -1,
+								"Bulgaria", -1,
+								"Bolivia", -1,
+								"Finland", -1,
+								"China", -1,
+								"Australia", -1,
+								"South Africa", -1,
+								"Belarus", -1,
+								"Iraq", -1,
+								"San Marino", -1,
+								"Ireland", -1,
+								"Slovakia", -1,
+								"Bosnia", -1,
+								"Canada", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas-Russia}",
+						Formula(
+							Match( :Country,
+								"Kyrgyzstan", 1,
+								"Afghanistan", 1,
+								"Montenegro", 1,
+								"Bahamas", 1,
+								"Russia", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain&Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada-New Zealand&Sweden&France&Japan&Germany&Netherlands&Denmark&Switzerland}",
+						Formula(
+							Match( :Country,
+								"Lithuania", 1,
+								"Israel", 1,
+								"Bangladesh", 1,
+								"Greece", 1,
+								"Pakistan", 1,
+								"Italy", 1,
+								"Kyrgyzstan", 1,
+								"Afghanistan", 1,
+								"Montenegro", 1,
+								"Bahamas", 1,
+								"Russia", 1,
+								"Turkey", 1,
+								"South Korea", 1,
+								"Georgia", 1,
+								"Chile", 1,
+								"Bahrain", 1,
+								"Sri Lanka", 1,
+								"Spain", 1,
+								"Poland", 1,
+								"Malta", 1,
+								"Taiwan", 1,
+								"Bulgaria", 1,
+								"Bolivia", 1,
+								"Finland", 1,
+								"China", 1,
+								"Australia", 1,
+								"South Africa", 1,
+								"Belarus", 1,
+								"Iraq", 1,
+								"San Marino", 1,
+								"Ireland", 1,
+								"Slovakia", 1,
+								"Bosnia", 1,
+								"Canada", 1,
+								"New Zealand", -1,
+								"Sweden", -1,
+								"France", -1,
+								"Japan", -1,
+								"Germany", -1,
+								"Netherlands", -1,
+								"Denmark", -1,
+								"Switzerland", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Kenya-Singapore}",
+						Formula( Match( :Country, "Kenya", 1, "Singapore", -1, 0 ) )
+					),
+					Transform Column(
+						"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy-Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain}",
+						Formula(
+							Match( :Country,
+								"Lithuania", 1,
+								"Israel", 1,
+								"Bangladesh", 1,
+								"Greece", 1,
+								"Pakistan", 1,
+								"Italy", 1,
+								"Kyrgyzstan", -1,
+								"Afghanistan", -1,
+								"Montenegro", -1,
+								"Bahamas", -1,
+								"Russia", -1,
+								"Turkey", -1,
+								"South Korea", -1,
+								"Georgia", -1,
+								"Chile", -1,
+								"Bahrain", -1,
+								"Sri Lanka", -1,
+								"Spain", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Cyprus-Kenya&Singapore}",
+						Formula(
+							Match( :Country,
+								"Cyprus", 1,
+								"Kenya", -1,
+								"Singapore", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Ireland-Slovakia&Bosnia}",
+						Formula(
+							Match( :Country,
+								"Ireland", 1,
+								"Slovakia", -1,
+								"Bosnia", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Turkey-South Korea}",
+						Formula(
+							Match( :Country, "Turkey", 1, "South Korea", -1, 0 )
+						)
+					),
+					Transform Column(
+						"Country{Cyprus&Kenya&Singapore-Malaysia}",
+						Formula(
+							Match( :Country,
+								"Cyprus", 1,
+								"Kenya", 1,
+								"Singapore", 1,
+								"Malaysia", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Panama&Serbia&North Macedonia&Egypt-UK&Brazil}",
+						Formula(
+							Match( :Country,
+								"Panama", 1,
+								"Serbia", 1,
+								"North Macedonia", 1,
+								"Egypt", 1,
+								"UK", -1,
+								"Brazil", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Finland-China&Australia&South Africa&Belarus&Iraq&San Marino}",
+						Formula(
+							Match( :Country,
+								"Finland", 1,
+								"China", -1,
+								"Australia", -1,
+								"South Africa", -1,
+								"Belarus", -1,
+								"Iraq", -1,
+								"San Marino", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia-Turkey&South Korea}",
+						Formula(
+							Match( :Country,
+								"Kyrgyzstan", 1,
+								"Afghanistan", 1,
+								"Montenegro", 1,
+								"Bahamas", 1,
+								"Russia", 1,
+								"Turkey", -1,
+								"South Korea", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan-Italy}",
+						Formula(
+							Match( :Country,
+								"Lithuania", 1,
+								"Israel", 1,
+								"Bangladesh", 1,
+								"Greece", 1,
+								"Pakistan", 1,
+								"Italy", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Uruguay-Panama&Serbia&North Macedonia&Egypt&UK&Brazil}",
+						Formula(
+							Match( :Country,
+								"Uruguay", 1,
+								"Panama", -1,
+								"Serbia", -1,
+								"North Macedonia", -1,
+								"Egypt", -1,
+								"UK", -1,
+								"Brazil", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Relationship_Status{Complicated-In Relationship&Single}",
+						Formula(
+							Match( :Relationship_Status,
+								"Complicated", 1,
+								"In Relationship", -1,
+								"Single", -1,
+								.
+							)
+						)
+					),
+					Transform Column(
+						"Country{Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil-Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}",
+						Formula(
+							Match( :Country,
+								"Uruguay", 1,
+								"Panama", 1,
+								"Serbia", 1,
+								"North Macedonia", 1,
+								"Egypt", 1,
+								"UK", 1,
+								"Brazil", 1,
+								"Cyprus", -1,
+								"Kenya", -1,
+								"Singapore", -1,
+								"Malaysia", -1,
+								"Venezuela", -1,
+								"Vietnam", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Maldives-Nepal}",
+						Formula( Match( :Country, "Maldives", 1, "Nepal", -1, 0 ) )
+					),
+					Transform Column(
+						"Country{Hungary&Vatican City-UAE}",
+						Formula(
+							Match( :Country,
+								"Hungary", 1,
+								"Vatican City", 1,
+								"UAE", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Hungary&Vatican City&UAE-India}",
+						Formula(
+							Match( :Country,
+								"Hungary", 1,
+								"Vatican City", 1,
+								"UAE", 1,
+								"India", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Cyprus&Kenya&Singapore&Malaysia-Venezuela&Vietnam}",
+						Formula(
+							Match( :Country,
+								"Cyprus", 1,
+								"Kenya", 1,
+								"Singapore", 1,
+								"Malaysia", 1,
+								"Venezuela", -1,
+								"Vietnam", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Hungary&Vatican City&UAE&India-Maldives&Nepal}",
+						Formula(
+							Match( :Country,
+								"Hungary", 1,
+								"Vatican City", 1,
+								"UAE", 1,
+								"India", 1,
+								"Maldives", -1,
+								"Nepal", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Hungary&Vatican City&UAE&India&Maldives&Nepal-Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}",
+						Formula(
+							Match( :Country,
+								"Hungary", 1,
+								"Vatican City", 1,
+								"UAE", 1,
+								"India", 1,
+								"Maldives", 1,
+								"Nepal", 1,
+								"Uruguay", -1,
+								"Panama", -1,
+								"Serbia", -1,
+								"North Macedonia", -1,
+								"Egypt", -1,
+								"UK", -1,
+								"Brazil", -1,
+								"Cyprus", -1,
+								"Kenya", -1,
+								"Singapore", -1,
+								"Malaysia", -1,
+								"Venezuela", -1,
+								"Vietnam", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Ireland&Slovakia&Bosnia-Canada}",
+						Formula(
+							Match( :Country,
+								"Ireland", 1,
+								"Slovakia", 1,
+								"Bosnia", 1,
+								"Canada", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Mexico-Colombia&Tajikistan&Oman&Estonia&Iceland}",
+						Formula(
+							Match( :Country,
+								"Mexico", 1,
+								"Colombia", -1,
+								"Tajikistan", -1,
+								"Oman", -1,
+								"Estonia", -1,
+								"Iceland", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{USA-Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo}",
+						Formula(
+							Match( :Country,
+								"USA", 1,
+								"Nigeria", -1,
+								"Uzbekistan", -1,
+								"Indonesia", -1,
+								"Portugal", -1,
+								"Syria", -1,
+								"Slovenia", -1,
+								"Kosovo", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon-Luxembourg&Argentina&Thailand&Moldova&Kuwait}",
+						Formula(
+							Match( :Country,
+								"Liechtenstein", 1,
+								"Armenia", 1,
+								"Czech Republic", 1,
+								"Ecuador", 1,
+								"Trinidad", 1,
+								"Lebanon", 1,
+								"Luxembourg", -1,
+								"Argentina", -1,
+								"Thailand", -1,
+								"Moldova", -1,
+								"Kuwait", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait-USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo}",
+						Formula(
+							Match( :Country,
+								"Liechtenstein", 1,
+								"Armenia", 1,
+								"Czech Republic", 1,
+								"Ecuador", 1,
+								"Trinidad", 1,
+								"Lebanon", 1,
+								"Luxembourg", 1,
+								"Argentina", 1,
+								"Thailand", 1,
+								"Moldova", 1,
+								"Kuwait", 1,
+								"USA", -1,
+								"Nigeria", -1,
+								"Uzbekistan", -1,
+								"Indonesia", -1,
+								"Portugal", -1,
+								"Syria", -1,
+								"Slovenia", -1,
+								"Kosovo", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan-Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland}",
+						Formula(
+							Match( :Country,
+								"Azerbaijan", 1,
+								"Norway", 1,
+								"Ukraine", 1,
+								"Qatar", 1,
+								"Philippines", 1,
+								"Ghana", 1,
+								"Albania", 1,
+								"Paraguay", 1,
+								"Austria", 1,
+								"Croatia", 1,
+								"Monaco", 1,
+								"Yemen", 1,
+								"Morocco", 1,
+								"Hong Kong", 1,
+								"Kazakhstan", 1,
+								"Mexico", -1,
+								"Colombia", -1,
+								"Tajikistan", -1,
+								"Oman", -1,
+								"Estonia", -1,
+								"Iceland", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo-Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica}",
+						Formula(
+							Match( :Country,
+								"Liechtenstein", 1,
+								"Armenia", 1,
+								"Czech Republic", 1,
+								"Ecuador", 1,
+								"Trinidad", 1,
+								"Lebanon", 1,
+								"Luxembourg", 1,
+								"Argentina", 1,
+								"Thailand", 1,
+								"Moldova", 1,
+								"Kuwait", 1,
+								"USA", 1,
+								"Nigeria", 1,
+								"Uzbekistan", 1,
+								"Indonesia", 1,
+								"Portugal", 1,
+								"Syria", 1,
+								"Slovenia", 1,
+								"Kosovo", 1,
+								"Jordan", -1,
+								"Andorra", -1,
+								"Costa Rica", -1,
+								"Belgium", -1,
+								"Bhutan", -1,
+								"Latvia", -1,
+								"Romania", -1,
+								"Peru", -1,
+								"Jamaica", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Greece-Pakistan}",
+						Formula( Match( :Country, "Greece", 1, "Pakistan", -1, 0 ) )
+					),
+					Transform Column(
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica-Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland}",
+						Formula(
+							Match( :Country,
+								"Liechtenstein", 1,
+								"Armenia", 1,
+								"Czech Republic", 1,
+								"Ecuador", 1,
+								"Trinidad", 1,
+								"Lebanon", 1,
+								"Luxembourg", 1,
+								"Argentina", 1,
+								"Thailand", 1,
+								"Moldova", 1,
+								"Kuwait", 1,
+								"USA", 1,
+								"Nigeria", 1,
+								"Uzbekistan", 1,
+								"Indonesia", 1,
+								"Portugal", 1,
+								"Syria", 1,
+								"Slovenia", 1,
+								"Kosovo", 1,
+								"Jordan", 1,
+								"Andorra", 1,
+								"Costa Rica", 1,
+								"Belgium", 1,
+								"Bhutan", 1,
+								"Latvia", 1,
+								"Romania", 1,
+								"Peru", 1,
+								"Jamaica", 1,
+								"Azerbaijan", -1,
+								"Norway", -1,
+								"Ukraine", -1,
+								"Qatar", -1,
+								"Philippines", -1,
+								"Ghana", -1,
+								"Albania", -1,
+								"Paraguay", -1,
+								"Austria", -1,
+								"Croatia", -1,
+								"Monaco", -1,
+								"Yemen", -1,
+								"Morocco", -1,
+								"Hong Kong", -1,
+								"Kazakhstan", -1,
+								"Mexico", -1,
+								"Colombia", -1,
+								"Tajikistan", -1,
+								"Oman", -1,
+								"Estonia", -1,
+								"Iceland", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica&Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland-Hungary&Vatican City&UAE&India&Maldives&Nepal&Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}",
+						Formula(
+							Match( :Country,
+								"Liechtenstein", 1,
+								"Armenia", 1,
+								"Czech Republic", 1,
+								"Ecuador", 1,
+								"Trinidad", 1,
+								"Lebanon", 1,
+								"Luxembourg", 1,
+								"Argentina", 1,
+								"Thailand", 1,
+								"Moldova", 1,
+								"Kuwait", 1,
+								"USA", 1,
+								"Nigeria", 1,
+								"Uzbekistan", 1,
+								"Indonesia", 1,
+								"Portugal", 1,
+								"Syria", 1,
+								"Slovenia", 1,
+								"Kosovo", 1,
+								"Jordan", 1,
+								"Andorra", 1,
+								"Costa Rica", 1,
+								"Belgium", 1,
+								"Bhutan", 1,
+								"Latvia", 1,
+								"Romania", 1,
+								"Peru", 1,
+								"Jamaica", 1,
+								"Azerbaijan", 1,
+								"Norway", 1,
+								"Ukraine", 1,
+								"Qatar", 1,
+								"Philippines", 1,
+								"Ghana", 1,
+								"Albania", 1,
+								"Paraguay", 1,
+								"Austria", 1,
+								"Croatia", 1,
+								"Monaco", 1,
+								"Yemen", 1,
+								"Morocco", 1,
+								"Hong Kong", 1,
+								"Kazakhstan", 1,
+								"Mexico", 1,
+								"Colombia", 1,
+								"Tajikistan", 1,
+								"Oman", 1,
+								"Estonia", 1,
+								"Iceland", 1,
+								"Hungary", -1,
+								"Vatican City", -1,
+								"UAE", -1,
+								"India", -1,
+								"Maldives", -1,
+								"Nepal", -1,
+								"Uruguay", -1,
+								"Panama", -1,
+								"Serbia", -1,
+								"North Macedonia", -1,
+								"Egypt", -1,
+								"UK", -1,
+								"Brazil", -1,
+								"Cyprus", -1,
+								"Kenya", -1,
+								"Singapore", -1,
+								"Malaysia", -1,
+								"Venezuela", -1,
+								"Vietnam", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica&Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland&Hungary&Vatican City&UAE&India&Maldives&Nepal&Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam-Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain&Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada&New Zealand&Sweden&France&Japan&Germany&Netherlands&Denmark&Switzerland}",
+						Formula(
+							Match( :Country,
+								"Liechtenstein", 1,
+								"Armenia", 1,
+								"Czech Republic", 1,
+								"Ecuador", 1,
+								"Trinidad", 1,
+								"Lebanon", 1,
+								"Luxembourg", 1,
+								"Argentina", 1,
+								"Thailand", 1,
+								"Moldova", 1,
+								"Kuwait", 1,
+								"USA", 1,
+								"Nigeria", 1,
+								"Uzbekistan", 1,
+								"Indonesia", 1,
+								"Portugal", 1,
+								"Syria", 1,
+								"Slovenia", 1,
+								"Kosovo", 1,
+								"Jordan", 1,
+								"Andorra", 1,
+								"Costa Rica", 1,
+								"Belgium", 1,
+								"Bhutan", 1,
+								"Latvia", 1,
+								"Romania", 1,
+								"Peru", 1,
+								"Jamaica", 1,
+								"Azerbaijan", 1,
+								"Norway", 1,
+								"Ukraine", 1,
+								"Qatar", 1,
+								"Philippines", 1,
+								"Ghana", 1,
+								"Albania", 1,
+								"Paraguay", 1,
+								"Austria", 1,
+								"Croatia", 1,
+								"Monaco", 1,
+								"Yemen", 1,
+								"Morocco", 1,
+								"Hong Kong", 1,
+								"Kazakhstan", 1,
+								"Mexico", 1,
+								"Colombia", 1,
+								"Tajikistan", 1,
+								"Oman", 1,
+								"Estonia", 1,
+								"Iceland", 1,
+								"Hungary", 1,
+								"Vatican City", 1,
+								"UAE", 1,
+								"India", 1,
+								"Maldives", 1,
+								"Nepal", 1,
+								"Uruguay", 1,
+								"Panama", 1,
+								"Serbia", 1,
+								"North Macedonia", 1,
+								"Egypt", 1,
+								"UK", 1,
+								"Brazil", 1,
+								"Cyprus", 1,
+								"Kenya", 1,
+								"Singapore", 1,
+								"Malaysia", 1,
+								"Venezuela", 1,
+								"Vietnam", 1,
+								"Lithuania", -1,
+								"Israel", -1,
+								"Bangladesh", -1,
+								"Greece", -1,
+								"Pakistan", -1,
+								"Italy", -1,
+								"Kyrgyzstan", -1,
+								"Afghanistan", -1,
+								"Montenegro", -1,
+								"Bahamas", -1,
+								"Russia", -1,
+								"Turkey", -1,
+								"South Korea", -1,
+								"Georgia", -1,
+								"Chile", -1,
+								"Bahrain", -1,
+								"Sri Lanka", -1,
+								"Spain", -1,
+								"Poland", -1,
+								"Malta", -1,
+								"Taiwan", -1,
+								"Bulgaria", -1,
+								"Bolivia", -1,
+								"Finland", -1,
+								"China", -1,
+								"Australia", -1,
+								"South Africa", -1,
+								"Belarus", -1,
+								"Iraq", -1,
+								"San Marino", -1,
+								"Ireland", -1,
+								"Slovakia", -1,
+								"Bosnia", -1,
+								"Canada", -1,
+								"New Zealand", -1,
+								"Sweden", -1,
+								"France", -1,
+								"Japan", -1,
+								"Germany", -1,
+								"Netherlands", -1,
+								"Denmark", -1,
+								"Switzerland", -1,
+								.
+							)
+						)
+					),
+					Transform Column(
+						"Country{Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino-Ireland&Slovakia&Bosnia&Canada}",
+						Formula(
+							Match( :Country,
+								"Poland", 1,
+								"Malta", 1,
+								"Taiwan", 1,
+								"Bulgaria", 1,
+								"Bolivia", 1,
+								"Finland", 1,
+								"China", 1,
+								"Australia", 1,
+								"South Africa", 1,
+								"Belarus", 1,
+								"Iraq", 1,
+								"San Marino", 1,
+								"Ireland", -1,
+								"Slovakia", -1,
+								"Bosnia", -1,
+								"Canada", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Georgia&Chile&Bahrain&Sri Lanka-Spain}",
+						Formula(
+							Match( :Country,
+								"Georgia", 1,
+								"Chile", 1,
+								"Bahrain", 1,
+								"Sri Lanka", 1,
+								"Spain", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Country{Lithuania&Israel-Bangladesh&Greece&Pakistan}",
+						Formula(
+							Match( :Country,
+								"Lithuania", 1,
+								"Israel", 1,
+								"Bangladesh", -1,
+								"Greece", -1,
+								"Pakistan", -1,
+								0
+							)
+						)
+					),
+					Transform Column(
+						"Transform[Predicted Sleep_Hours_Per_Night 3]",
+						Formula( 1 / :Predicted Sleep_Hours_Per_Night 3 )
+					),
+					Weight( :"Transform[Predicted Sleep_Hours_Per_Night 3]"n ),
+					Y( :Sleep_Hours_Per_Night ),
+					Effects(
+						:Age, :Avg_Daily_Usage_Hours, :Mental_Health_Score,
+						:Conflicts_Over_Social_Media, :Addicted_Score,
+						:Age * :Avg_Daily_Usage_Hours,
+						:Mental_Health_Score * :Conflicts_Over_Social_Media,
+						:Mental_Health_Score * :Addicted_Score,
+						:Conflicts_Over_Social_Media * :Addicted_Score,
+						:
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica&Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland&Hungary&Vatican City&UAE&India&Maldives&Nepal&Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam-Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain&Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada&New Zealand&Sweden&France&Japan&Germany&Netherlands&Denmark&Switzerland}"n,
+						:
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica&Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland-Hungary&Vatican City&UAE&India&Maldives&Nepal&Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}"n,
+						:
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica-Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland}"n,
+						:
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo-Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica}"n,
+						:
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait-USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo}"n,
+						:
+						"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon-Luxembourg&Argentina&Thailand&Moldova&Kuwait}"n,
+						:
+						"Country{USA-Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo}"n,
+						:
+						"Country{Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan-Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland}"n,
+						:"Country{Mexico-Colombia&Tajikistan&Oman&Estonia&Iceland}"n,
+						:
+						"Country{Hungary&Vatican City&UAE&India&Maldives&Nepal-Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}"n,
+						:"Country{Hungary&Vatican City&UAE&India-Maldives&Nepal}"n,
+						:"Country{Hungary&Vatican City&UAE-India}"n,
+						:"Country{Hungary&Vatican City-UAE}"n,
+						:"Country{Maldives-Nepal}"n,
+						:
+						"Country{Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil-Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}"n,
+						:
+						"Country{Uruguay-Panama&Serbia&North Macedonia&Egypt&UK&Brazil}"n,
+						:"Country{Panama&Serbia&North Macedonia&Egypt-UK&Brazil}"n,
+						:
+						"Country{Cyprus&Kenya&Singapore&Malaysia-Venezuela&Vietnam}"n,
+						:"Country{Cyprus&Kenya&Singapore-Malaysia}"n,
+						:"Country{Cyprus-Kenya&Singapore}"n,
+						:"Country{Kenya-Singapore}"n,
+						:
+						"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain&Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada-New Zealand&Sweden&France&Japan&Germany&Netherlands&Denmark&Switzerland}"n,
+						:
+						"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain-Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada}"n,
+						:
+						"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy-Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain}"n,
+						:
+						"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan-Italy}"n,
+						:"Country{Lithuania&Israel-Bangladesh&Greece&Pakistan}"n,
+						:"Country{Bangladesh-Greece&Pakistan}"n,
+						:"Country{Greece-Pakistan}"n,
+						:
+						"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea-Georgia&Chile&Bahrain&Sri Lanka&Spain}"n,
+						:
+						"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia-Turkey&South Korea}"n,
+						:
+						"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas-Russia}"n,
+						:"Country{Turkey-South Korea}"n,
+						:"Country{Georgia&Chile&Bahrain&Sri Lanka-Spain}"n,
+						:"Country{Georgia&Chile&Bahrain-Sri Lanka}"n,
+						:
+						"Country{Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino-Ireland&Slovakia&Bosnia&Canada}"n,
+						:
+						"Country{Poland&Malta&Taiwan&Bulgaria&Bolivia-Finland&China&Australia&South Africa&Belarus&Iraq&San Marino}"n,
+						:"Country{Poland-Malta&Taiwan&Bulgaria&Bolivia}"n,
+						:
+						"Country{Finland-China&Australia&South Africa&Belarus&Iraq&San Marino}"n,
+						:
+						"Country{China-Australia&South Africa&Belarus&Iraq&San Marino}"n,
+						:"Country{Ireland&Slovakia&Bosnia-Canada}"n,
+						:"Country{Ireland-Slovakia&Bosnia}"n,
+						:
+						"Country{New Zealand&Sweden&France&Japan&Germany-Netherlands&Denmark&Switzerland}"n,
+						:"Relationship_Status{Complicated-In Relationship&Single}"n,
+						:"Academic_Level{High School-Undergraduate&Graduate}"n,
+						:"Academic_Level{Undergraduate-Graduate}"n,
+						:Avg_Daily_Usage_Hours *
+						:"Academic_Level{High School-Undergraduate&Graduate}"n,
+						:Avg_Daily_Usage_Hours *
+						:"Academic_Level{Undergraduate-Graduate}"n,
+						:Addicted_Score * :"Academic_Level{Undergraduate-Graduate}"n
+					),
+					Center Polynomials( 0 ),
+					Personality( "Standard Least Squares" ),
+					Emphasis( "Effect Screening" ),
+					Run(
+						:Sleep_Hours_Per_Night << {Summary of Fit( 1 ),
+						Analysis of Variance( 0 ), Parameter Estimates( 1 ),
+						Effect Details( 0 ), Sorted Estimates( 0 ),
+						Plot Actual by Predicted( 1 ), Plot Regression( 0 ),
+						Plot Residual by Predicted( 1 ),
+						Plot Studentized Residuals( 1 ), Plot Effect Leverage( 0 ),
+						Plot Residual by Normal Quantiles( 0 ), AICc( 1 ),
+						Box Cox Y Transformation( 0 ),
+						Profiler(
+							1,
+							Confidence Intervals( 1 ),
+							Arrange in Rows( 26 ),
+							Term Value(
+								:Age( 20.6183, Lock( 0 ), Show( 1 ) ),
+								:
+								Avg_Daily_Usage_Hours(
+									5.0947,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:Mental_Health_Score( 6.0969, Lock( 0 ), Show( 1 ) ),
+								:
+								Conflicts_Over_Social_Media(
+									2.9624,
+									Lock( 0 ),
+									Show( 1 )
+								), :Addicted_Score( 6.6423, Lock( 0 ), Show( 1 ) ),
+								:
+								"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica&Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland&Hungary&Vatican City&UAE&India&Maldives&Nepal&Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam-Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain&Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada&New Zealand&Sweden&France&Japan&Germany&Netherlands&Denmark&Switzerland}"n(
+									-0.1309,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica&Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland-Hungary&Vatican City&UAE&India&Maldives&Nepal&Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}"n(
+									-0.0357,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica-Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland}"n(
+									0.0447,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo-Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica}"n(
+									0.0909,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait-USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo}"n(
+									-0.066,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon-Luxembourg&Argentina&Thailand&Moldova&Kuwait}"n(
+									0.0021,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{USA-Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo}"n(
+									0.0614,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan-Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland}"n(
+									-0.0274,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Mexico-Colombia&Tajikistan&Oman&Estonia&Iceland}"n(
+									0.0361,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Hungary&Vatican City&UAE&India&Maldives&Nepal-Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}"n(
+									0.0738,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Hungary&Vatican City&UAE&India-Maldives&Nepal}"n(
+									0.035,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Hungary&Vatican City&UAE-India}"n(
+									-0.0631,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Hungary&Vatican City-UAE}"n(
+									-0.0095,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Maldives-Nepal}"n(
+									-0.0001,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil-Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}"n(
+									0.0226,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Uruguay-Panama&Serbia&North Macedonia&Egypt&UK&Brazil}"n(
+									-0.0486,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Panama&Serbia&North Macedonia&Egypt-UK&Brazil}"n(
+									-0.0383,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Cyprus&Kenya&Singapore&Malaysia-Venezuela&Vietnam}"n(
+									0.0233,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Cyprus&Kenya&Singapore-Malaysia}"n(
+									0.0029,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Cyprus-Kenya&Singapore}"n(
+									-0.0116,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Kenya-Singapore}"n(
+									-0.0102,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain&Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada-New Zealand&Sweden&France&Japan&Germany&Netherlands&Denmark&Switzerland}"n(
+									0.2467,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain-Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada}"n(
+									0.076,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy-Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain}"n(
+									-0.0656,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan-Italy}"n(
+									0.0296,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Lithuania&Israel-Bangladesh&Greece&Pakistan}"n(
+									-0.053,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Bangladesh-Greece&Pakistan}"n(
+									0.0001,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Greece-Pakistan}"n(
+									-0.0251,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea-Georgia&Chile&Bahrain&Sri Lanka&Spain}"n(
+									0.0257,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia-Turkey&South Korea}"n(
+									-0.0202,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas-Russia}"n(
+									-0.0237,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Turkey-South Korea}"n(
+									0.0194,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Georgia&Chile&Bahrain&Sri Lanka-Spain}"n(
+									-0.0096,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Georgia&Chile&Bahrain-Sri Lanka}"n(
+									-0.019,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino-Ireland&Slovakia&Bosnia&Canada}"n(
+									0.0007,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Poland&Malta&Taiwan&Bulgaria&Bolivia-Finland&China&Australia&South Africa&Belarus&Iraq&San Marino}"n(
+									-0.0288,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Poland-Malta&Taiwan&Bulgaria&Bolivia}"n(
+									0.0164,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Finland-China&Australia&South Africa&Belarus&Iraq&San Marino}"n(
+									-0.0346,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{China-Australia&South Africa&Belarus&Iraq&San Marino}"n(
+									-0.0028,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Ireland&Slovakia&Bosnia-Canada}"n(
+									-0.0056,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{Ireland-Slovakia&Bosnia}"n(
+									0.0331,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Country{New Zealand&Sweden&France&Japan&Germany-Netherlands&Denmark&Switzerland}"n(
+									0.0137,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Relationship_Status{Complicated-In Relationship&Single}"n(
+									-0.8942,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Academic_Level{High School-Undergraduate&Graduate}"n(
+									-0.9044,
+									Lock( 0 ),
+									Show( 1 )
+								),
+								:
+								"Academic_Level{Undergraduate-Graduate}"n(
+									0.0585,
+									Lock( 0 ),
+									Show( 1 )
+								)
+							)
+						)}
+					),
+					SendToReport(
+						Dispatch( {}, "Prediction Profiler", OutlineBox,
+							{Close( 1 )}
+						)
+					)
+				)
+			);
+			Wait( 0 );
+			rpt["Response Sleep_Hours_Per_Night", "Effect Summary", Table Box( 1 )]
+			 << Make Into Data Table;
+			rpt << Close Window;
+		),
+		New Column( "Source",
+			Character,
+			"Nominal",
+			Set Property( "ID Column", 1 ),
+			Set Values(
+				{"Conflicts_Over_Social_Media*Addicted_Score",
+				"Conflicts_Over_Social_Media",
+				"Mental_Health_Score*Conflicts_Over_Social_Media",
+				"Avg_Daily_Usage_Hours",
+				"Country{USA-Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo}",
+				"Mental_Health_Score",
+				"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas-Russia}",
+				"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica&Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland&Hungary&Vatican City&UAE&India&Maldives&Nepal&Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam-Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain&Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada&New Zealand&Sweden&France&Japan&Germany&Netherlands&Denmark&Switzerland}",
+				"Country{Mexico-Colombia&Tajikistan&Oman&Estonia&Iceland}", "Age",
+				"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan-Italy}",
+				"Age*Avg_Daily_Usage_Hours", "Country{Turkey-South Korea}",
+				"Country{Poland-Malta&Taiwan&Bulgaria&Bolivia}",
+				"Country{Panama&Serbia&North Macedonia&Egypt-UK&Brazil}",
+				"Country{Georgia&Chile&Bahrain&Sri Lanka-Spain}",
+				"Academic_Level{High School-Undergraduate&Graduate}",
+				"Avg_Daily_Usage_Hours*Academic_Level{High School-Undergraduate&Graduate}",
+				"Country{Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan-Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland}",
+				"Country{Hungary&Vatican City-UAE}",
+				"Avg_Daily_Usage_Hours*Academic_Level{Undergraduate-Graduate}",
+				"Country{China-Australia&South Africa&Belarus&Iraq&San Marino}",
+				"Country{Hungary&Vatican City&UAE&India-Maldives&Nepal}",
+				"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia-Turkey&South Korea}",
+				"Country{Maldives-Nepal}",
+				"Country{Cyprus&Kenya&Singapore-Malaysia}",
+				"Country{Georgia&Chile&Bahrain-Sri Lanka}",
+				"Country{Ireland&Slovakia&Bosnia-Canada}",
+				"Country{Hungary&Vatican City&UAE&India&Maldives&Nepal-Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}",
+				"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon-Luxembourg&Argentina&Thailand&Moldova&Kuwait}",
+				"Academic_Level{Undergraduate-Graduate}",
+				"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo-Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica}",
+				"Country{Bangladesh-Greece&Pakistan}",
+				"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait-USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo}",
+				"Relationship_Status{Complicated-In Relationship&Single}",
+				"Country{Ireland-Slovakia&Bosnia}",
+				"Country{Lithuania&Israel-Bangladesh&Greece&Pakistan}",
+				"Country{Kenya-Singapore}",
+				"Country{Cyprus&Kenya&Singapore&Malaysia-Venezuela&Vietnam}",
+				"Country{Greece-Pakistan}",
+				"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain-Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada}",
+				"Country{Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino-Ireland&Slovakia&Bosnia&Canada}",
+				"Country{Poland&Malta&Taiwan&Bulgaria&Bolivia-Finland&China&Australia&South Africa&Belarus&Iraq&San Marino}",
+				"Country{Hungary&Vatican City&UAE-India}",
+				"Country{New Zealand&Sweden&France&Japan&Germany-Netherlands&Denmark&Switzerland}",
+				"Addicted_Score*Academic_Level{Undergraduate-Graduate}",
+				"Addicted_Score",
+				"Country{Uruguay-Panama&Serbia&North Macedonia&Egypt&UK&Brazil}",
+				"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy&Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain&Poland&Malta&Taiwan&Bulgaria&Bolivia&Finland&China&Australia&South Africa&Belarus&Iraq&San Marino&Ireland&Slovakia&Bosnia&Canada-New Zealand&Sweden&France&Japan&Germany&Netherlands&Denmark&Switzerland}",
+				"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica&Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland-Hungary&Vatican City&UAE&India&Maldives&Nepal&Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil&Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}",
+				"Country{Liechtenstein&Armenia&Czech Republic&Ecuador&Trinidad&Lebanon&Luxembourg&Argentina&Thailand&Moldova&Kuwait&USA&Nigeria&Uzbekistan&Indonesia&Portugal&Syria&Slovenia&Kosovo&Jordan&Andorra&Costa Rica&Belgium&Bhutan&Latvia&Romania&Peru&Jamaica-Azerbaijan&Norway&Ukraine&Qatar&Philippines&Ghana&Albania&Paraguay&Austria&Croatia&Monaco&Yemen&Morocco&Hong Kong&Kazakhstan&Mexico&Colombia&Tajikistan&Oman&Estonia&Iceland}",
+				"Country{Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea-Georgia&Chile&Bahrain&Sri Lanka&Spain}",
+				"Mental_Health_Score*Addicted_Score",
+				"Country{Lithuania&Israel&Bangladesh&Greece&Pakistan&Italy-Kyrgyzstan&Afghanistan&Montenegro&Bahamas&Russia&Turkey&South Korea&Georgia&Chile&Bahrain&Sri Lanka&Spain}",
+				"Country{Uruguay&Panama&Serbia&North Macedonia&Egypt&UK&Brazil-Cyprus&Kenya&Singapore&Malaysia&Venezuela&Vietnam}",
+				"Country{Cyprus-Kenya&Singapore}",
+				"Country{Finland-China&Australia&South Africa&Belarus&Iraq&San Marino}"
+				}
+			)
+		),
+		New Column( "Logworth",
+			Numeric,
+			"Continuous",
+			Format( "Fixed Dec", 12, 3 ),
+			Set Values(
+				[36.1040917842492, 28.7618165242524, 17.5671066750511,
+				14.3671511471749, 12.6392366663109, 12.53411016445, 11.6584021493398,
+				11.5457689827315, 11.1161207238746, 10.6699552632808,
+				10.4362108997869, 10.1133025747051, 10.1067717827173,
+				9.79780705473489, 9.51586025907028, 9.12945898037137,
+				7.41393490311706, 7.19474254482692, 6.79181295475296,
+				6.77257557623363, 6.58031101284842, 6.18230769275081,
+				5.97989687741552, 5.46763819988418, 5.41340110317011,
+				5.3766812073232, 5.10036639377924, 4.44593555711966,
+				3.86312392481957, 3.69071534068959, 3.50977232261667,
+				3.4330335810583, 3.39501199352257, 2.96899709684463,
+				2.95978824364122, 2.9243076533958, 2.91319326698698,
+				2.76066790389721, 2.4913685754794, 2.37255931694928,
+				2.30840045641658, 2.20304010598052, 2.08692414519598,
+				2.07214483891156, 1.86814560821392, 1.7973083694435,
+				1.71707630017261, 1.52224157839826, 1.25362609163395,
+				1.12112730189253, 1.01999489898752, 0.741758329758791,
+				0.561606955397733, 0.50131175821977, 0.429226161685081,
+				0.423860504596342, 0.295990333384113]
+			)
+		),
+		New Column( "PValue",
+			Numeric,
+			"Continuous",
+			Format( "Fixed Dec", 12, 5 ),
+			Set Values(
+				[7.86879472191774e-37, 1.73054730656477e-29, 2.70952601365511e-18,
+				4.29386961542886e-15, 2.29489771582499e-13, 2.92341072258872e-13,
+				2.19582563372216e-12, 2.84597458382596e-12, 7.65383818244306e-12,
+				2.1381823325402e-11, 3.66259670372892e-11, 7.7036656458308e-11,
+				7.82038649897147e-11, 1.59291625938282e-10, 3.04887585451827e-10,
+				0.0000000007422342993, 0.0000000385536141776, 0.0000000638641968901,
+				0.0000001615053990782, 0.0000001688202051805, 0.0000002628385043047,
+				0.0000006571920592008, 0.0000010473772167028, 0.0000034069189359898,
+				0.0000038601030322268, 0.0000042006722004139, 0.0000079365838004398,
+				0.0000358149577262174, 0.000137049064436479, 0.000203837769925994,
+				0.000309191593396309, 0.000368949069128181, 0.000402705913002603,
+				0.00107399659172916, 0.00109701295505602, 0.00119039843325355,
+				0.00122125606356092, 0.00173513030922717, 0.00322575533726472,
+				0.00424073059071222, 0.00491586042530132, 0.00626556001162343,
+				0.00818607755432125, 0.00846944907589134, 0.0135473512697006,
+				0.0159474640042068, 0.0191833168389644, 0.0300440462318274,
+				0.0557665667815594, 0.0756611082070127, 0.095500380296734,
+				0.181234832282666, 0.2744056470756, 0.315274061654947,
+				0.372197831328999, 0.376824815692327, 0.50583592087776]
+			)
+		),
+		New Column( "~",
+			Character,
+			"Nominal",
+			Set Values(
+				{"", "^", "", "", "", "^", "", "", "", "", "", "", "", "", "", "",
+				"", "", "", "", "", "", "", "", "", "", "", "", "", "", "^", "", "",
+				"", "", "", "", "", "", "", "", "", "", "", "", "", "^", "", "", "",
+				"", "", "", "", "", "", ""}
+			)
+		),
+		Set Label Columns( :Source )
+	)) << Run Formulas;
+	table1 << Graph Builder(
+		Variables(
+			X( :Logworth ),
+			Y(
+				:Source,
+				Order By( :Logworth, Descending, Order Statistic( "Mean" ) )
+			)
+		),
+		Elements( Bar( X, Y, Legend( 5 ) ) )
+	);
+)
